@@ -24,7 +24,8 @@ namespace LdsMvcMovie.Models
                         Title = "The Best Two Years",
                         ReleaseDate = DateTime.Parse("2003-1-1"),
                         Genre = "Religious Comedy",
-                        Price = 19.99M
+                        Price = 19.99M,
+                        Rating = "G"
                     },
 
                     new Movie
@@ -32,7 +33,8 @@ namespace LdsMvcMovie.Models
                         Title = "Joseph Smith: Prophet of The Restoration",
                         ReleaseDate = DateTime.Parse("2005-12-31"),
                         Genre = "Religious",
-                        Price = 0.00M
+                        Price = 0.00M,
+                        Rating = "G"
                     },
 
                     new Movie
@@ -40,7 +42,8 @@ namespace LdsMvcMovie.Models
                         Title = "The Home Teachers",
                         ReleaseDate = DateTime.Parse("2004-1-1"),
                         Genre = "Religious Comedy",
-                        Price = 4.99M
+                        Price = 4.99M,
+                        Rating = "PG"
                     },
 
                     new Movie
@@ -48,7 +51,8 @@ namespace LdsMvcMovie.Models
                         Title = "The RM",
                         ReleaseDate = DateTime.Parse("2003-1-3"),
                         Genre = "Religious",
-                        Price = 19.99M
+                        Price = 19.99M,
+                        Rating = "G"
                     }
                 );
                 context.SaveChanges();
