@@ -6,6 +6,8 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.EntityFrameworkCore;
+using LdsMvcMovie.Models;
 
 namespace LdsMvcMovie
 {
@@ -22,6 +24,9 @@ namespace LdsMvcMovie
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc();
+
+            services.AddDbContext<LdsMvcMovieContext>(options =>
+                    options.UseSqlServer(Configuration.GetConnectionString("LdsMvcMovieContext")));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
