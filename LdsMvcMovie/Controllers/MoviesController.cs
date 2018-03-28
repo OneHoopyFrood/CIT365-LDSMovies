@@ -171,5 +171,7 @@ namespace LdsMvcMovie.Controllers
         {
             return _context.Movie.Any(e => e.ID == id);
         }
+
+        // Intentionally ommiting the notUsed method
     }
 }
