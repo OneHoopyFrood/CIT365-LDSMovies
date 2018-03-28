@@ -20,7 +20,7 @@ namespace LdsMvcMovie.Controllers
 
         // GET: Movies
         // Requires using Microsoft.AspNetCore.Mvc.Rendering;
-        public async Task<IActionResult> Index(string movieGenre, string searchString)
+        public async Task<IActionResult> Index(string movieGenre, string searchString, string releaseSort)
         {
             // Use LINQ to get list of genres.
             IQueryable<string> genreQuery = from m in _context.Movie
@@ -38,6 +38,19 @@ namespace LdsMvcMovie.Controllers
             if (!String.IsNullOrEmpty(movieGenre))
             {
                 movies = movies.Where(x => x.Genre == movieGenre);
+            }
+
+            ViewBag.ReleaseSortParm = releaseSort == "DESC" || String.IsNullOrEmpty(releaseSort) ? "ASC" : "DESC";
+            if (!String.IsNullOrEmpty(releaseSort))
+            {
+                if (releaseSort == "DESC")
+                {
+                    movies = movies.OrderByDescending(r => r.ReleaseDate);
+                }
+                else
+                {
+                    movies = movies.OrderBy(r => r.ReleaseDate);
+                }
             }
 
             var movieGenreVM = new MovieGenreViewModel();

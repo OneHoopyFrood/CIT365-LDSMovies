@@ -28,7 +28,7 @@
                 @Html.DisplayNameFor(model => model.movies[0].Title)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.movies[0].ReleaseDate)
+                @Html.ActionLink("Release Date", "Index", new { releaseSort = ViewBag.ReleaseSortParm })
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.movies[0].Genre)
