@@ -4,24 +4,20 @@
     ViewData["Title"] = "All Movies";
 }
 
-<h2>Index</h2>
+<h2>LDS Movies</h2>
 
-<p>
-    <a asp-action="Create">Create New LDS Movie</a>
-</p>
-
-<form asp-controller="Movies" asp-action="Index" method="get">
+<form asp-controller="Movies" asp-action="Index" class="form-inline" method="get">
     <p>
-        <select asp-for="movieGenre" asp-items="Model.genres">
+        <select asp-for="movieGenre" asp-items="Model.genres" class="form-control">
             <option value="">All</option>
         </select>
 
-        Title: <input type="text" name="SearchString">
-        <input type="submit" value="Filter" />
+        Title: <input type="text" name="SearchString" class="form-control" />
+        <button type="submit" class="btn btn-primary"><span class="glyphicon glyphicon-filter"></span> Filter</button>
     </p>
 </form>
 
-<table class="table">
+<table class="table table-hover table-bordered">
     <thead>
         <tr>
             <th>
@@ -64,3 +60,6 @@
         }
     </tbody>
 </table>
+<p>
+    <a asp-action="Create" class="btn btn-primary">Create New LDS Movie</a>
+</p>
